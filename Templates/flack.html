@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Flack Chat
+{% endblock %}
+
+{% block main %}
+
+<script>
+    if (localStorage.getItem("username") == null) {
+        var username = prompt("Please enter your username");
+        localStorage.setItem("username", username);
+        console.log(localStorage.getItem("username"));
+    }
+    else {
+        console.log("Current user is: ", localStorage.getItem("username"));
+    }
+    
+</script>
+
+{% endblock %}
