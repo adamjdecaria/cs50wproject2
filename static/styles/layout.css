@@ -19,6 +19,18 @@
     text-align: center;
 }
 
+.card {
+    height: 500px;
+}
+
+.scroll {
+    overflow-y: auto;
+}
+
+.card-footer {
+    flex-direction: row;
+}
+
 
 /* On small screens, set height to 'auto' for sidenav and grid */
 

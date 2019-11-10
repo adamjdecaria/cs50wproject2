@@ -21,21 +21,28 @@
     <div class="col-sm-9">
         <h2> Channels </h2>
         <p> Select a channel: </p>
-        <ul class="nav nav-tabs">
+        <ul class="nav nav-tabs" role="tablist">
             {% for channel in channels %}
                 <li class="nav-item"> 
-                    <a class=nav-link href="#{{ channel }}">#{{ channel }}</a> 
+                    <a class="nav-link" data-toggle="tab" href="#{{ channel }}">#{{ channel }}</a> 
                 </li>
             {% endfor %}
         </ul>
         <br>
         <br>
         <br>
-        <div class="jumbotron">
-            <div id="{{ channel }}">
-                <div class="card">
-                    <div class="card-body">
-                        <p class="card-text">Test text.  Chats will go here</p>
+        <div id="{{ channel }}">
+            <div class="card">
+                <div class="card-header"> You are in the {{ channel }} channel</div>
+                <div class="card-body" scroll>
+                    <p class="card-text">Test text.  Chats will go here</p>
+                    <ul id="messageList">
+                    </ul>
+                </div>
+                <div class="card-footer">
+                    <div class="form-inline">
+                        <input name="message" id="chatMessage" size = "85" autofocus> 
+                        <button type="button" class="btn btn-light" id="sendMessage">Send</button>
                     </div>
                 </div>
             </div>

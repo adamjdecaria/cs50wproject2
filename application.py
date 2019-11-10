@@ -27,3 +27,9 @@ def createChannel():
     print(f"ADDED NEW CHANNEL: {channel}")
     
     return render_template("flack.html", channels=channels)
+
+@socketio.on("new message")
+def sendMessage(message):
+    message = message
+    print(f"RECEIVED MESSAGE: {message}")
+    emit("announce message", message, broadcast=True)
