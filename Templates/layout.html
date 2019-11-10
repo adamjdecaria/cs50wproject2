@@ -4,28 +4,34 @@
   <title>Flack{% block title %}{% endblock %}</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/layout.css') }}">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 </head>
 <body>
 
 <div class="container-fluid">
-  <div class="row content">
-    <div class="col-sm-3 sidenav">
-        <h4>Flack - A chat app for the web</h4>
-        <br>
-        <br>
-        <div class="channels">
-            <ul class="nav nav-pills nav-stacked"> CHANNELS
-            </ul><br>
+    <div class="row content">
+        <div class="col-sm-3 sidenav">
+            <h4>Flack - A chat app for the Web</h4>
+            <br>
+            <br>
+            <div class="channels">
+                <ul class="nav nav-pills nav-stacked"> CHANNELS
+                <br>
+                </ul><br>
+            </div>
+            <form id="form" action="/createChannel" method="post">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="newchannel">
+                </div><button type="submit" class="btn btn-primary">Create Channel</button>
+            </form>
         </div>
+        {% block main %}
+        {% endblock %}
     </div>
-      {% block main %}
-      {% endblock %}
-  </div>
 </div>
 
 </body>

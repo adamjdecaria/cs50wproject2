@@ -8,10 +8,15 @@
 /* Set background color and 100% height */
 
 .sidenav {
-    background-color: rgb(5, 1, 12);
+    background-color: black;
     color: whitesmoke;
     height: 100%;
     overflow: auto;
+}
+
+.col-sm-9 {
+    height: max-content;
+    text-align: center;
 }
 
 
